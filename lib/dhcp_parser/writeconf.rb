@@ -1,12 +1,12 @@
 module WriteConf
 
-  def self.write_file(file_name,nets)
+  def self.write_file_conf(file_name,nets)
     if nets.nil?
       return false
     else
       data = ""
       nets.each do |net|
-        data += WriteConf.set_file(net)
+        data += WriteConf.set_data(net)
       end
       file = File.open("#{file_name}","w+") do |file|  
         file.write(data)
@@ -21,7 +21,8 @@ module WriteConf
     end
   end
 
-  def self.set_file(net)
+  def self.set_data(net)
+
     data = "subnet #{net.subnet} netmask #{net.netmask} {\n"
 
     # set option
@@ -50,7 +51,7 @@ module WriteConf
           data += "\s\s\s\s\s\sfixed-address #{h.fixed_address}\n"
           data += "\s\s\s\s}\n" 
         end
-      else
+      elsif !value.nil? && !value.empty?
         data += "\s\s\s\s#{key} #{value};\n"
       end
     end

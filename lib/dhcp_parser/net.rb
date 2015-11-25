@@ -17,7 +17,7 @@ class Net
             }
   end
 
-  def test
+  def set
     net1 = Net.new
     net2 = Net.new
     # Set subnet

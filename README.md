@@ -108,7 +108,6 @@ dhcp.netmasks
 => ["255.255.255.0"]
 ```
 
-
 * Get list pool
 
 ```ruby

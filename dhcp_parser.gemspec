@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nguyen hoang anh"]
   spec.email         = ["anhnh@vccloud.vn"]
 
-  spec.summary       = %q{Parser file dhcp.conf.}
-  spec.description   = %q{Update convert file config to xml and write file xml}
+  spec.summary       = %q{Parser file dhcp.conf}
+  spec.description   = %q{Update convert file config to xml and write file xml.}
   spec.homepage      = "https://github.com/hoanganhhanoi/dhcp_parser"
   spec.license       = "MIT"
 

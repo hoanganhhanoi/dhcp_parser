@@ -22,9 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-_1. Read file__
-
-__With file dhcp.conf__
+#### With file dhcp.conf
 
 ```ruby
 subnet 192.168.1.0 netmask 255.255.255.0 {
@@ -84,7 +82,7 @@ subnet  10.152.187.0 netmask 255.255.255.0 {
 }
 ```
 
-__1. Read file__
+#### 1. Read file
 
 * The first, create object dhcp with param: the path to file config
 
@@ -200,14 +198,53 @@ array_net[0]
 
 ```
 
-__2. Write file__
+* Set array net
+
+```ruby
+#
+# Create object 
+net1 = Net.new
+net2 = Net.new
+
+# the object's attribute list
+subnet = ""
+netmask = ""
+option = {}
+differ = {}
+pool = { "range" => "",
+         "allow" => "", 
+         "denny" => "",
+         "hosts" => []
+       }
+
+# Set attributes: 
+net1.attribute              
+net2.attribute
+```
+
+#### 2. Write file
 
 Create object net, then set attribute for object. Then call method write_file in module WriteConf with param: "path/file_name", "array_net"
 
 ```ruby
-result = dhcp.write_file_conf(path/file_name, array_net)
-# or
-result = WriteConf.write_file_conf(path/file_name, array_net)
+array_net = dhcp.net
+result = dhcp.write_file_conf(path/file_name.type, array_net)
+# Success
+  => true
+# Fail
+  => false 
+```
+
+#### 3. Convert to XML and write file xml
+
+```ruby
+# Convert to XML
+array_net = dhcp.net
+xml = dhcp.to_xml(array_net)
+
+# Write file
+result = dhcp.write_file_xml(path/filename.type, xml)
+
 # Success
   => true
 # Fail

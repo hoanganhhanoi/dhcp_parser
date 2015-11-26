@@ -33,7 +33,9 @@ module WriteConf
     # set differ
     net.differ.each do |key, value|
       if key == "authoritative"
-        data += "\s\s#{key};\n"
+        if value
+          data += "\s\s#{key};\n"
+        end
       else
         data += "\s\s#{key}\s\s\s\s\s\s\s\s\s#{value};\n"
       end

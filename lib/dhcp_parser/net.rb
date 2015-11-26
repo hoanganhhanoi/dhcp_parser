@@ -1,4 +1,5 @@
 require_relative "writeconf.rb"
+require_relative "xml.rb"
 require_relative "host.rb"
 
 class Net
@@ -45,6 +46,7 @@ class Net
     net2.option["subnet-mask"] = "255.255.255.0"
     net2.option["broadcast-address"] = "192.168.1.255"
     net2.option["domain-name-servers"] = "194.168.4.100"
+    net1.differ["authoritative"] = "true"
     net2.differ["default-lease-time"] = "2"
     net2.differ['max-lease-time'] = "86400"
     # Set pool

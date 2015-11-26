@@ -1,4 +1,5 @@
 require_relative "dhcp_parser/writeconf.rb"
+require_relative "dhcp_parser/xml.rb"
 require_relative "dhcp_parser/net.rb"
 require_relative "dhcp_parser/host.rb"
 require_relative "dhcp_parser/version.rb"
@@ -393,6 +394,16 @@ module DHCPParser
       if !arr_net.empty?
         result = WriteConf.write_file_conf(file_name, arr_net)
       end
+    end
+
+    # Convert xml
+    def to_xml(arr_net)
+      xml = XMLConvert.to_xml(arr_net)
+    end
+
+    # Write file xml 
+    def write_file_xml(file_name, xml_string)
+      result = XMLConvert.write_file_xml(file_name, xml_string)
     end
   end
 end

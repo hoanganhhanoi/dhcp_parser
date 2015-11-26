@@ -1,8 +1,8 @@
-require_relative "dhcp_parser/writeconf.rb"
-require_relative "dhcp_parser/xml.rb"
-require_relative "dhcp_parser/net.rb"
-require_relative "dhcp_parser/host.rb"
-require_relative "dhcp_parser/version.rb"
+require "dhcp_parser/writeconf"
+require "dhcp_parser/xml"
+require "dhcp_parser/net"
+require "dhcp_parser/host"
+require "dhcp_parser/version"
 require "rubygems"
 
 module DHCPParser

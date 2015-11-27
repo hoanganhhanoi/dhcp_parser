@@ -8,9 +8,9 @@ module WriteConf
       nets.each do |net|
         data += WriteConf.set_data(net)
       end
-      file = File.open("#{file_name}","w+") do |file|  
-        file.write(data)
-      end
+      file = File.open("#{file_name}","a+")
+      file.puts(data)
+      file.close
       return true
     end
   end

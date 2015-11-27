@@ -1,9 +1,9 @@
-require "dhcp_parser/writeconf"
-require "dhcp_parser/xml"
-require "dhcp_parser/net"
-require "dhcp_parser/host"
-require "dhcp_parser/version"
 require "rubygems"
+require "dhcp_parser/writeconf.rb"
+require "dhcp_parser/xml.rb"
+require "dhcp_parser/net.rb"
+require "dhcp_parser/host.rb"
+require "dhcp_parser/version.rb"
 
 module DHCPParser
   class Conf
@@ -28,6 +28,7 @@ module DHCPParser
       begin
         if path.nil? || path.empty?
           path = "#{Gem.default_path[1]}/gems/dhcp_parser-#{DhcpParser::VERSION}/examples/default_dhcp.conf"
+          # path = "../examples/default_dhcp.conf"
         end
         file = File.new("#{path}", "r")
         while (line = file.gets)

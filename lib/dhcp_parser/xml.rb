@@ -66,9 +66,9 @@ module XMLConvert
     if xml_string.empty? && file_name.empty?
       return false
     else
-      File.open("#{file_name}", "w+") do |file|
-        file.write(xml_string)
-      end
+      file = File.open("#{file_name}", "w+")
+      file.write(xml_string)
+      file.close
       return true
     end
   end

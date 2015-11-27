@@ -391,9 +391,9 @@ module DHCPParser
     end
 
     # Write file
-    def write_file_conf(file_name, arr_net)
+    def write_file_conf(file_name, arr_net, condition)
       if !arr_net.empty?
-        result = WriteConf.write_file_conf(file_name, arr_net)
+        result = WriteConf.write_file_conf(file_name, arr_net, condition)
       end
     end
 

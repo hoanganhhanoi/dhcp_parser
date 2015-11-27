@@ -1,6 +1,6 @@
 module WriteConf
 
-  def self.write_file_conf(file_name,nets)
+  def self.write_file_conf(file_name,nets,condition)
     if nets.nil?
       return false
     else
@@ -8,10 +8,17 @@ module WriteConf
       nets.each do |net|
         data += WriteConf.set_data(net)
       end
-      file = File.open("#{file_name}","a+")
-      file.puts(data)
-      file.close
-      return true
+      if condition
+        file = File.open("#{file_name}","a+")
+        file.puts(data)
+        file.close
+        return true
+      else
+        file = File.open("#{file_name}","w+")
+        file.write(data)
+        file.close
+        return true
+      end
     end
   end
 

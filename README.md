@@ -224,11 +224,11 @@ net2.attribute
 
 #### 2. Write file
 
-Create object net, then set attribute for object. Then call method write_file in module WriteConf with param: "path/file_name", "array_net"
-
+Create object net, then set attribute for object. Then call method write_file in module WriteConf with param: "path/file_name", "array_net","condition: true/false". If the condition is true, you will append new net into file.
+If the condition is false, you will write the new file .
 ```ruby
 array_net = dhcp.net
-result = dhcp.write_file_conf(path/file_name.type, array_net)
+result = dhcp.write_file_conf(path/file_name.type, array_net, condition)
 # Success
   => true
 # Fail
